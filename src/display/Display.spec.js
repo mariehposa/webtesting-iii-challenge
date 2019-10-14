@@ -48,4 +48,12 @@ describe('Display component', () => {
         wrapper = rtl.render(<Display closed = {true} />)
         expect(wrapper.queryByText(/closed/i)).toHaveClass('red-led')
     })
+    it('when unlocked display green-led', () => {
+        wrapper = rtl.render(<Display locked = {false} />)
+        expect(wrapper.queryByText(/unlocked/i)).toHaveClass('green-led')
+    })
+    it('when open display green-led', () => {
+        wrapper = rtl.render(<Display close = {false} />)
+        expect(wrapper.queryByText(/open/i)).toHaveClass('green-led')
+    })
 })
