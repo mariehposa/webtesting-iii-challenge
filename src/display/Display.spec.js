@@ -32,4 +32,12 @@ describe('Display component', () => {
         wrapper = rtl.render(<Display closed = {false}/>)
         expect(wrapper.queryByText(/open/i)).toBeInTheDocument()
     })
+    test('display locked if locked prop is true', () => {
+        wrapper = rtl.render(<Display locked = {true} />)
+        expect(wrapper.queryByText(/locked/i)).toBeInTheDocument()
+    })
+    test('display unlocked if locked prop is false', () => {
+        wrapper = rtl.render(<Display locked = {false} />)
+        expect(wrapper.queryByText(/unlocked/i)).toBeInTheDocument()
+    })
 })
