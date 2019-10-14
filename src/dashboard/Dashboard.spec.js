@@ -6,7 +6,7 @@ import Dashboard from './Dashboard';
 
 afterEach(rtl.cleanup);
 
-let wrapper, incSyncButton;
+let wrapper;
 
 beforeEach(() => {
     wrapper = rtl.render(<Dashboard />)
