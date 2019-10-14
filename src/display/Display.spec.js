@@ -1,6 +1,6 @@
 // Test away!
 
-import React from React;
+import React from 'react';
 import * as rtl from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import Display from './Display';
@@ -11,4 +11,16 @@ let wrapper
 
 beforeEach(() => {
     wrapper = rtl.render(<Display />)
+})
+
+describe('Display component', () => {
+
+    it('gate is opened', () => {
+        expect(wrapper.queryByText(/open/i)).toBeInTheDocument()
+    })
+    it('gate is unlocked', () => {
+        expect(wrapper.queryByText(/unlock/i)).toBeInTheDocument()
+    })
+    
+    
 })
